@@ -7,18 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Window.Resources>
-        <DataTemplate x:Key="firstNameItemTemplate">
-            <Label Content="{Binding Path=FirstName}"/>
-        </DataTemplate>
-        <DataTemplate x:Key="lastNameItemTemplate">
-            <Label Content="{Binding Path=LastName}"/>
-        </DataTemplate>
-        <DataTemplate x:Key="heightItemTemplate">
-            <Label Content="{Binding Path=Height}"/>
-        </DataTemplate>
-        <DataTemplate x:Key="ageItemTemplate">
-            <Label Content="{Binding Path=Age}"/>
-        </DataTemplate>
         <DataTemplate x:Key="editButtonItemTemplate">
             <Button Click="EditButton_Click">Edit</Button>
         </DataTemplate>
@@ -38,10 +26,10 @@
 
         <DataGrid Grid.Column="0" Grid.Row="0" ItemsSource="{Binding}" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTemplateColumn Header="First Name" CellTemplate="{StaticResource firstNameItemTemplate}" />
-                <DataGridTemplateColumn Header="Last Name" CellTemplate="{StaticResource lastNameItemTemplate}" />
-                <DataGridTemplateColumn Header="Height" CellTemplate="{StaticResource heightItemTemplate}" />
-                <DataGridTemplateColumn Header="Age" CellTemplate="{StaticResource ageItemTemplate}" />
+                <DataGridTextColumn Header="First Name" Binding="{Binding Path=FirstName}" />
+                <DataGridTextColumn Header="Last Name" Binding="{Binding Path=LastName}" />
+                <DataGridTextColumn Header="Height" Binding="{Binding Path=Height}" />
+                <DataGridTextColumn Header="Age" Binding="{Binding Path=Age}" />
                 <DataGridTemplateColumn CellTemplate="{StaticResource editButtonItemTemplate}" />
                 <DataGridTemplateColumn CellTemplate="{StaticResource deleteButtonItemTemplate}" />
             </DataGrid.Columns>
