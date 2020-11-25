@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Lecture10.View.ToDoItemList"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Lecture10.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="764">
+
+    <UserControl.Resources>
+        <DataTemplate x:Key="toDoItemTemplate">
+            <Grid>
+                <Label Content="{Binding Path=Label}" />
+                <CheckBox IsChecked="{Binding Path=Done}" />
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+
+    <Grid>
+        <ListBox
+            ItemsSource="{Binding}"
+            ItemTemplate="{StaticResource toDoItemTemplate}"
+            Width="764"
+            Height="450"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Margin="0,0,0,0"
+        />
+    </Grid>
+</UserControl>
